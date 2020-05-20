@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Austino"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-20 04:04:49 PM"/>
+        <attribute name="created" value="QXVzdGlubztERVNLVE9QLVFEMTVKUEo7MjAyMC0wNS0yMDswMzoyNToyMSBQTTszMDY5"/>
+        <attribute name="edited" value="QXVzdGlubztERVNLVE9QLVFEMTVKUEo7MjAyMC0wNS0yMDswNDowNDo0OSBQTTsxOzMxODU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="secret" type="Integer" array="False" size=""/>
+            <assign variable="secret" expression="random(100) + 1"/>
+            <declare name="solved" type="Boolean" array="False" size=""/>
+            <assign variable="solved" expression="false"/>
+            <declare name="guess" type="Integer" array="False" size=""/>
+            <while expression="not solved">
+                <output expression="&quot;Guess the number to win me pot o' gold&quot;" newline="True"/>
+                <input variable="guess"/>
+                <if expression="secret &gt; guess">
+                    <then>
+                        <output expression="&quot;Ye need a taller guess M'laddie&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="secret &lt; guess">
+                            <then>
+                                <output expression="&quot;You lookin a little tipsy laddie try a smaller pint&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;You may have guessed the number but you still ain't getting me gold *leprechaun runs away*&quot;" newline="True"/>
+                                <assign variable="solved" expression="true"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
